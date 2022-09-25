@@ -8,7 +8,7 @@ module.exports = {
         {
           name:"Paulinho da DataGrupo",
           email:"paulinhodatagrupo@test.com",
-          active:"true",
+          active:true,
           role:"developer",
           createdAt: new Date(),
           updatedAt: new Date()

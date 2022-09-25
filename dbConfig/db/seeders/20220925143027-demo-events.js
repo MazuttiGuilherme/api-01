@@ -22,7 +22,7 @@ module.exports = {
 
       },
       {
-        start_date:"2022-15-12",
+        start_date:"2022-12-15",
         name: "3rd Iberoamerican Conference on Mass Spectrometry",
         guest_id: 6,
         createdAt: new Date(),
