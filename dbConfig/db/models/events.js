@@ -10,13 +10,20 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Events.hasMany(models.Inscriptions, {
+        foreignKey:"event_id"
+      });
+
+      Events.belongsTo(models.Users, {
+        foreignKey: "event_id"
+      });
     }
   }
   Events.init({
     name: DataTypes.STRING,
     start_date: DataTypes.DATEONLY
-  }, {
+  }, 
+  {
     sequelize,
     modelName: 'Events',
   });
