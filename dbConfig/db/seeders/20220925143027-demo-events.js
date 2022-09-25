@@ -30,11 +30,11 @@ module.exports = {
 
       },
       {
-          start_date:"2023-04-05",
-          name: "Web Summit Rio",
-          guest_id: 6,
-          createdAt: new Date(),
-          updatedAt: new Date()
+        start_date:"2023-04-05",
+        name: "Web Summit Rio",
+        guest_id: 6,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
 
     ],
