@@ -4,6 +4,25 @@ const database = require('../../../dbConfig/db/models');
 
 class UsersController {
 
+    static async getAllTrue(req, res) {
+        try {
+          const allTrueUsers = await database.Users.findAll();
+          return res.status(200).send(allTrueUsers);
+        } catch (error) {
+          return res.status(500).send(error.message);
+        }
+      }
+    
+      static async getAllFalse(req, res) {
+        try {
+          const allFalseUsers = await database.Users.scope("allFalse").findAll();
+          return res.status(200).send(allFalseUsers);
+        } catch (error) {
+          return res.status(500).send(error.message);
+        }
+      }
+    
+
     static async getAll(req, res) {
         try {
             const allUsers = await database.Users.findAll();
@@ -33,16 +52,16 @@ class UsersController {
     static async createUser(req, res) {
         const {name, email, active, role} = req.body; 
         try {
-            const verifyingUser = await database.Users.findOne({
+            const verifyingDeveloper = await database.Users.findOne({
                 where:{
                     email: email
                 }
             });
     
-            if(verifyingUser) {
+            if(verifyingDeveloper) {
                 return res
                 .status(401)
-                .send("User already registered.", { verifyingUser });
+                .send("User already registered.", { verifyingDeveloper });
             }
             const user = await database.Users.create({
                 name, 
@@ -97,6 +116,7 @@ class UsersController {
         }
     }
 }
+
 
 
 module.exports = UsersController;

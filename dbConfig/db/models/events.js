@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Events.hasMany(models.Inscriptions, {
-        foreignKey:"event_id"
+        foreignKey:"inscription_id"
       });
 
       Events.belongsTo(models.Users, {
-        foreignKey: "event_id"
+        foreignKey: "user_id"
       });
     }
   }
@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   {
     sequelize,
     modelName: 'Events',
+    paranoid: true
   });
   return Events;
 };

@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       });
 
       Inscriptions.belongsTo(models.Events, {
-        targetKey: "event_id"
+        foreignKey: "event_id"
       });
     }
   }
@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Inscriptions',
+    paranoid:true
   });
   return Inscriptions;
 };
