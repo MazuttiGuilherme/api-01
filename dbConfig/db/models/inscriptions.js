@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Inscriptions.belongsTo(models.Users, {
-        foreignKey: "developer_id"
+        foreignKey: "user_id",
       });
 
       Inscriptions.belongsTo(models.Events, {
