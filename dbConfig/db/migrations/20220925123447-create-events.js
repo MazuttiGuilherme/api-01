@@ -14,7 +14,7 @@ module.exports = {
       start_date: {
         type: Sequelize.DATEONLY
       },
-      guest_id: {
+        user_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
