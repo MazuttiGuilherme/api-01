@@ -115,8 +115,24 @@ class UsersController {
             return res.status(500).send(error.message);
         }
     }
+
+    static async getInscription(req, res) {
+        const {user_id, inscription_id} = req.params;
+        try {
+            const oneInscription = await database.Inscriptions.findOne({
+                where: {
+                    id: Number(inscription_id),
+                    user_id: Number(user_id)
+                }
+            });
+            if (!oneInscription) {
+            return res.status(404).send({msgError: "Inscription not found!"});
+            }
+            return res.status(200).send(oneInscription);
+        }catch (error) {
+            return res.status(500).send(error.message);
+        }
+    }
 }
-
-
 
 module.exports = UsersController;
