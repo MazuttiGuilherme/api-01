@@ -9,7 +9,7 @@ module.exports = {
       [
         {
           name: 'Pedrinho da Datagrupo',
-          atctive: true,
+          active: true,
           email: 'pedrinho@datagrupo.com',
           role: 'developer',
           createdAt: new Date(),
@@ -17,7 +17,7 @@ module.exports = {
         },
         {
           name: 'Guilherme da Datagrupo',
-          atctive: true,
+          active: true,
           email: 'guilherme@datagrupo.com',
           role: 'developer',
           createdAt: new Date(),
@@ -25,7 +25,7 @@ module.exports = {
         },
         {
           name: 'Andre de Minas',
-          atctive: true,
+          active: true,
           email: 'andre@minas.com',
           role: 'developer',
           createdAt: new Date(),
@@ -33,7 +33,7 @@ module.exports = {
         },
         {
           name: 'Alexandre Corinthiano',
-          atctive: true,
+          active: true,
           email: 'alexandre@corinthians.com',
           role: 'developer',
           createdAt: new Date(),
@@ -41,7 +41,7 @@ module.exports = {
         },
         {
           name: 'Danilo Brum',
-          atctive: true,
+          active: true,
           email: 'danilo@bootcamp.com',
           role: 'developer',
           createdAt: new Date(),
@@ -49,7 +49,7 @@ module.exports = {
         },
         {
           name: 'Wellington Prof. Temp',
-          atctive: true,
+          active: true,
           email: 'prof@temp.com',
           role: 'guest',
           createdAt: new Date(),
@@ -57,7 +57,7 @@ module.exports = {
         },
         {
           name: 'Fran de Portugal',
-          atctive: true,
+          active: true,
           email: 'fran@portugal.com',
           role: 'developer',
           createdAt: new Date(),
@@ -65,7 +65,7 @@ module.exports = {
         },
         {
           name: 'Ariel Junior',
-          atctive: true,
+          active: true,
           email: 'ariel@infnet.com',
           role: 'guest',
           createdAt: new Date(),
@@ -73,7 +73,7 @@ module.exports = {
         },
         {
           name: 'Ana Beatriz',
-          atctive: true,
+          active: true,
           email: 'ana@bootcamp.com',
           role: 'developer',
           createdAt: new Date(),

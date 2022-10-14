@@ -36,7 +36,7 @@ module.exports = {
         {
           status: 'cancelled',
           user_id: 1,
-          event_id: 2,
+          event_id: 4,
           createdAt: new Date(),
           updatedAt: new Date()
         },

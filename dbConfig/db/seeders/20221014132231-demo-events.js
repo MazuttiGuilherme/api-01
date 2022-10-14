@@ -4,7 +4,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
 
     await queryInterface.bulkInsert(
-      'People',
+      'Events',
       [
         {
           start_date: "2022-10-12",
