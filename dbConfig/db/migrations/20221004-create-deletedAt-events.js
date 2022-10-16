@@ -4,7 +4,6 @@ module.exports = {
     await queryInterface.addColumn('Events', 'deletedAt', {
         allowNull: true,
         type: Sequelize.DATE,
-
     });
   },
   async down(queryInterface, Sequelize) {

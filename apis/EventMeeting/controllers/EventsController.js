@@ -13,7 +13,7 @@ class EventsController {
   static async getOneEvent(req, res) {
     const { event_id } = req.params;
     try {
-      const oneEvent = await database.Events.findOneEvent({
+      const oneEvent = await database.Events.findOne({
         where: {
           id: Number(event_id)
         }
@@ -60,7 +60,8 @@ class EventsController {
     try {
       await database.Events.destroy({
         where: {
-          id: Number(event_id)
+          id: Number(event_id),
+          event_id: Number(event_id)
         }
       });
       return res

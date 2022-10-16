@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Users.hasMany(models.Events, {
         foreignKey: "event_id"
-      }); 
+      });
 
       Users.hasMany(models.Inscriptions, {
         foreignKey: "inscription_id"
@@ -22,16 +22,34 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Users.init(
-  {
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    active: DataTypes.BOOLEAN,
-    role: DataTypes.STRING
-  }, 
-  {
-    sequelize,
-    modelName: 'Users',
-    paranoid: true
-  });
+    {
+      name: DataTypes.STRING,
+      email: DataTypes.STRING,
+      active: DataTypes.BOOLEAN,
+      role: DataTypes.STRING
+    },
+    {
+      sequelize,
+      modelName: 'Users',
+      paranoid: true,
+      defaultScope: {
+        where: {
+          active: true
+        }
+      },
+      scopes: {
+        allFalse: {
+          where: {
+            active: false
+          }
+        },
+        allSoftDelete: {
+          where: {
+            active: false
+          }
+        }
+      }
+    }
+  );
   return Users;
 };
