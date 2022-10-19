@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Events.hasMany(models.Inscriptions, {
-        foreignKey:"inscription_id"
+        foreignKey:"event_id"
       });
 
       Events.belongsTo(models.Users, {
