@@ -1,6 +1,4 @@
 const database = require('../../../dbConfig/db/models');
-const Op = require('Sequelize').Op;
-
 
 
 
@@ -17,14 +15,7 @@ class UsersController {
 
     static async getAllFalse(req, res) {
         try {
-            const allFalseUsers = await database.Users.findAll({
-                where: {
-                    deletedAt: {
-                      [Op.ne]: null
-                    }
-                },
-                paranoid: false
-            });
+            const allFalseUsers = await database.Users.scope("allFalse").findAll();
             return res.status(200).send(allFalseUsers);
         } catch (error) {
             return res.status(500).send(error.message);
@@ -42,11 +33,11 @@ class UsersController {
     }
 
     static async getOne(req, res) {
-        const { userId } = req.params;
+        const { inscriptionId } = req.params;
         try {
             const user = await database.Users.findOne({
                 where: {
-                    id: Number(userId)
+                    id: Number(inscriptionId)
                 }
             });
             if (!user) {
@@ -110,11 +101,11 @@ class UsersController {
     }
 
     static async deleteUser(req, res) {
-        const { userId } = req.params
+        const { inscriptionId } = req.params
         try {
             await database.Users.destroy({
                 where: {
-                    id: Number(userId)
+                    id: Number(inscriptionId)
                 }
             });
 
@@ -131,7 +122,7 @@ class UsersController {
             const oneInscription = await database.Inscriptions.findOne({
                 where: {
                     id: Number(inscription_id),
-    //                user_id: Number(user_id)
+                    user_id: Number(user_id)
                 }
             });
             if (!oneInscription) {

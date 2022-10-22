@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       });
 
       Users.hasMany(models.Inscriptions, {
-        foreignKey: "user_id"
+        foreignKey: "inscription_id"
       });
     }
   }
@@ -37,6 +37,18 @@ module.exports = (sequelize, DataTypes) => {
           active: true
         }
       },
+      scopes: {
+        allFalse: {
+          where: {
+            active: false
+          }
+        },
+        allSoftDelete: {
+          where: {
+            active: false
+          }
+        }
+      }
     }
   );
   return Users;
